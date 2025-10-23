@@ -1,2 +1,0 @@
-# ProjectCICD
-Cours EPSI Java
