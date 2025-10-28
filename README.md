@@ -54,9 +54,8 @@ start target\\site\\jacoco\\index.html
 
 ## Couverture actuelle
 - `HangmanGame` : couverture élevée (ex. ~95%)
-- `HangmanCli` : couverture ajoutée via tests d'entrée/sortie
+- `HangmanCli` : couverture ajoutée via tests d'entrée/sortie (75%)
 
-Remplacez `XX%` dans les badges ci-dessus par la valeur réelle affichée dans votre rapport JaCoCo.
 
 ## CI
 L'objectif : utiliser JDK 21 et exécuter `mvn test jacoco:report`. Exemple de bonnes pratiques :
@@ -69,12 +68,3 @@ Si vous le souhaitez, je peux ajouter un `Jenkinsfile` ou un workflow GitHub Act
 - Fork → branch → PR
 - Respectez le style Java du projet et ajoutez des tests pour toute nouvelle logique
 - Mettez à jour le README et CHANGELOG si nécessaire
-
-## Licence
-Choisissez la licence souhaitée (MIT / Apache-2.0 / autre) et ajoutez un fichier `LICENSE` si nécessaire.
-
----
-Si vous voulez, je peux :
-- remplacer `XX%` par la valeur réelle de couverture,
-- ajouter un `Jenkinsfile` / GitHub Actions minimal pour CI,
-- ouvrir une branche et préparer la PR avec ces fichiers.
