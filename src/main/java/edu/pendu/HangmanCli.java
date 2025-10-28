@@ -4,10 +4,21 @@ import java.util.Scanner;
 
 public class HangmanCli {
     public static void main(String[] args) {
+        // Allow tests to inject a deterministic word via system property `hangman.word`.
+        String forced = System.getProperty("hangman.word");
         String[] mots = {"poisson", "chaise", "bureau"};
-        String mot = mots[(int) (Math.random() * mots.length)];
+        String mot;
+        if (forced != null && !forced.isEmpty()) {
+            mot = forced;
+        } else {
+            mot = mots[(int) (Math.random() * mots.length)];
+        }
+        play(new Scanner(System.in), mot);
+    }
+
+    // Extracted to allow testing by injecting Scanner and a fixed word.
+    static void play(Scanner scanner, String mot) {
         HangmanGame game = new HangmanGame(mot, 7);
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Bienvenu dans le jeu du pendu !");
         System.out.println("Mot : " + spacedState(game.getCurrentState()));
